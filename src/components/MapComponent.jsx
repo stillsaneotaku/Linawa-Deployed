@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import styles from "./MapComponent.module.css";
+import styles from "./MapComponents.module.css";
 
 
 const MapComponent = ({ onLocationSelect }) => {
