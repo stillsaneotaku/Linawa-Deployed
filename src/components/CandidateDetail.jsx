@@ -1,84 +1,81 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import candidates from "./CandidatesData";
-// STYLE
 import styles from "./CandidateDetail.module.css";
 
 const CandidateDetail = () => {
-  const { name } = useParams(); // Get the candidate's name from URL
+  const { name } = useParams();
 
-  // Find the candidate in the array
   const candidate = candidates.find(
     (c) => c.name.toLowerCase() === decodeURIComponent(name).toLowerCase()
   );
 
-  // If no match, show "Candidate not found"
   if (!candidate) {
     return <p className="text-center mt-3">Candidate not found.</p>;
   }
 
   return (
     <>
-      <h4 className="pageTitle">Candidate Information</h4>
-      <div className="pageContainer">
-        <div className="candidateProfilePage card">
+      <h4 className={styles.pageTitle}>Candidate Information</h4>
+      <div className={styles.pageContainer}>
+        <div className={`${styles.candidateProfilePage} card`}>
           <img
             src={candidate.image}
             alt={candidate.name}
-            className="candidateImageFormat card-img"
+            className={`${styles.candidateImageFormat} card-img`}
           />
-          <div className="titleContainer">
-            <h5 className="title">{candidate.name}</h5>
+          <div className={styles.titleContainer}>
+            <h5 className={styles.title}>{candidate.name}</h5>
           </div>
-          <div className="tableInformation">
+          <div className={styles.tableInformation}>
             <table className="table table-striped">
               <thead>
                 <tr>
-                  <th colSpan="2" className="tableTitle">Personal Information</th>
+                  <th colSpan="2" className={styles.tableTitle}>Personal Information</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="firstCol">Party</td>
-                  <td className="secondCol">{candidate.party}</td>
+                  <td className={styles.firstCol}>Party</td>
+                  <td className={styles.secondCol}>{candidate.party}</td>
                 </tr>
                 <tr>
-                  <td className="firstCol">Alliance</td>
-                  <td className="secondCol">{candidate.alliance}</td>
+                  <td className={styles.firstCol}>Alliance</td>
+                  <td className={styles.secondCol}>{candidate.alliance}</td>
                 </tr>
                 <tr>
-                  <td className="firstCol">Position</td>
-                  <td className="secondCol">{candidate.position}</td>
+                  <td className={styles.firstCol}>Position</td>
+                  <td className={styles.secondCol}>{candidate.position}</td>
                 </tr>
                 <tr>
-                  <td className="firstCol">Age</td>
-                  <td className="secondCol">{candidate.age}</td>
+                  <td className={styles.firstCol}>Age</td>
+                  <td className={styles.secondCol}>{candidate.age}</td>
                 </tr>
                 <tr>
-                  <td className="firstCol">Hometown</td>
-                  <td>{candidate.hometown}</td>
+                  <td className={styles.firstCol}>Hometown</td>
+                  <td className={styles.secondCol}>{candidate.hometown}</td>
                 </tr>
                 <tr>
-                  <td className="firstCol">Highest Educational Attainment</td>
-                  <td className="secondCol">{candidate.education}</td>
+                  <td className={styles.firstCol}>Highest Educational Attainment</td>
+                  <td className={styles.secondCol}>{candidate.education}</td>
                 </tr>
                 <tr>
-                  <td className="firstCol">Professional Experience</td>
-                  <td className="secondCol">{candidate.experience}</td>
+                  <td className={styles.firstCol}>Professional Experience</td>
+                  <td className={styles.secondCol}>{candidate.experience}</td>
                 </tr>
                 <tr>
-                  <td className="firstCol">Previous Position</td>
-                  <td className="secondCol">{candidate.previousPosition}</td>
+                  <td className={styles.firstCol}>Previous Position</td>
+                  <td className={styles.secondCol}>{candidate.previousPosition}</td>
                 </tr>
                 <tr>
-                  <td className="firstCol">Achievements</td>
-                  <td className="secondCol">{candidate.achievements}</td>
+                  <td className={styles.firstCol}>Achievements</td>
+                  <td className={styles.secondCol}>{candidate.achievements}</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div className="card-footer">
-          <Link to="../pages/candidates" className="btn btn-primary">Return to Candidates</Link>
+          <div className={styles.cardFooter}>
+            <Link to="../pages/candidates" className="btn btn-primary">Return to Candidates</Link>
           </div>
         </div>
       </div>
