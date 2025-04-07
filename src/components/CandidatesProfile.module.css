@@ -1,41 +1,71 @@
-/* NAVBAR */
-.navbar {
+.bi.bi-search {
+  background-color: white;
+}
+
+.col-md-2.mb-1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar.bg-body-tertiary {
   background-color: transparent !important;
 }
 
-.searchArea {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 40% !important;
-  background: rgb(27, 89, 190) !important;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.filterText {
-  color: white !important;
-  margin-left: 4% !important;
-}
-
-.dFlex {
-  margin-bottom: 0.5%;
-}
-
-.formControl {
+/* SEARCH BAR */
+.form-control.me-2 {
   border-radius: 20px !important;
   height: 40px;
   margin: 0;
   padding: 8%;
 }
 
-.formSelect {
+.searchArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 40% !important;
+  width: 100%;
+  background-color: #154da6;
+
+  background: rgb(27, 89, 190) !important;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.filterText {
+  color: var(--white) !important;
+  margin: 0 0 0 4% !important;
+}
+
+/* Filter Dropdown */
+.form-select {
   max-width: 10% !important;
   max-height: 1% !important;
   margin: 1% 0 1% 1%;
 }
 
-/* CARD CONTAINER */
+/* FORM */
+.d-flex {
+  margin-bottom: 0.5%;
+}
+
+.btn {
+  background-color: #154da6 !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.btn:hover {
+  background-color: var(--blue) !important;
+  color: white !important;
+}
+
+.btn:active {
+  background-color: #154da6 !important;
+  color: white !important;
+}
+
 .cardContainer {
   padding-left: 1.5%;
 }
@@ -54,54 +84,64 @@
   background-color: white;
 }
 
-/* CARD STYLING */
+/* PILLS */
+.rounded-pill {
+  font-size: 0.7rem !important;
+}
+
+/* CARD COMPONENT */
 .card {
   width: 210px;
   border-radius: 20px !important;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* padding: 4% 0.5% 3% 0; */
   background: rgba(3, 87, 222, 0.9) !important;
   box-shadow: 0 0px 20px rgba(10, 61, 145, 0.8) !important;
   backdrop-filter: blur(5px) !important;
 }
 
-.cardBody {
+/* CARD BODY */
+.card-body {
   padding: 2% 0 6% 0 !important;
 }
 
-.cardTitle {
+/* NAME OF CANDIDATE */
+.card-title {
   font-weight: bold;
   font-size: 1.2rem;
   color: white !important;
 }
 
-.cardImgBottom {
+/* IMAGE OF CANDIDATE */
+.card-img-bottom {
   width: 166px !important;
   height: 166px !important;
   margin: 20px;
-  object-fit: cover;
+  object-fit: cover; /* Crop image without stretching */
   border-radius: 16px !important;
   border: 2px groove rgba(10, 61, 145, 1) !important;
 }
 
-/* BADGES */
-.roundedPill {
-  font-size: 0.7rem !important;
+/* LINK */
+.card-link {
+  color: white;
+  font-weight: medium;
 }
 
-/* LIST ITEMS */
-.listGroupItemTop,
-.listGroupItemBot {
-  color: white !important;
+/* PARTY/ALLIANCE CONTAINER */
+.list-group-item-top,
+.list-group-item-bot {
+  color: var(--text-color, white) !important;
   font-weight: bold;
   width: 208px;
-  padding: 4% 4% !important;
-  display: flex !important;
-  align-content: center;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal !important;
+  padding: 4% 4% !important;
+  display: flex !important;
+  align-content: center;
   border-left: 3px solid var(--bg-color) !important;
   border-right: 3px solid var(--bg-color) !important;
   background: var(--bg-color) !important;
@@ -109,19 +149,18 @@
   backdrop-filter: blur(10px) !important;
 }
 
-.listGroupItemTop {
+.list-group-item-top {
   border-top: 2px solid var(--border-color, yellow) !important;
 }
 
-.listGroupItemBot {
+.list-group-item-bot {
   border-bottom: 2px solid var(--border-color, yellow) !important;
   border-bottom-left-radius: 20px !important;
   border-bottom-right-radius: 20px !important;
 }
 
-/* NO CANDIDATES */
 .noCandidates {
-  color: white;
+  color: var(--white);
   margin: 0;
   font-weight: bold;
   text-align: center;
@@ -131,9 +170,99 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   margin: 2.4% auto;
   padding: 0.5%;
+
   width: 14% !important;
+
   border-radius: 20px;
+
   background-color: rgb(27, 89, 190) !important;
+}
+
+/* PARTY SETTINGS */
+.party-Independent {
+  --bg-color: var(--bg-black);
+  --border-color: var(--bg-black);
+  --shadow-color: var(--bg-black);
+}
+
+.party-PDP {
+  --bg-color: var(--bg-green);
+  --border-color: var(--bg-green);
+  --shadow-color: var(--bg-green);
+}
+
+.party-Nacionalista {
+  --bg-color: var(--bg-blue);
+  --border-color: var(--bg-blue);
+  --shadow-color: var(--bg-blue);
+}
+
+.party-Makabayan {
+  --bg-color: var(--bg-red);
+  --border-color: var(--bg-red);
+  --shadow-color: var(--bg-red);
+}
+
+.party-NPC {
+  --bg-color: var(--bg-purple);
+  --border-color: var(--bg-purple);
+  --shadow-color: var(--bg-purple);
+}
+
+.party-PLM {
+  --bg-color: var(--bg-darkblue);
+  --border-color: var(--bg-darkblue);
+  --shadow-color: var(--bg-darkblue);
+}
+
+.party-Lakas {
+  --bg-color: var(--bg-yellow);
+  --border-color: var(--bg-yellow);
+  --shadow-color: var(--bg-yellow);
+}
+
+.party-none {
+  --bg-color: var(--bg-none);
+  --border-color: var(--bg-none);
+  --shadow-color: var(--bg-none);
+}
+
+/* ALLIANCE SETTINGS */
+.alliance-Alyansa {
+  --bg-color: var(--bg-red);
+  --border-color: var(--bg-red);
+  --shadow-color: var(--bg-red);
+}
+
+.alliance-KiBam {
+  --bg-color: var(--bg-green);
+  --border-color: var(--bg-green);
+  --shadow-color: var(--bg-green);
+}
+
+.alliance-Oposisyon {
+  --bg-color: var(--bg-purple);
+  --border-color: var(--bg-purple);
+  --shadow-color: var(--bg-purple);
+}
+
+.alliance-PDP {
+  --bg-color: var(--bg-blue);
+  --border-color: var(--bg-blue);
+  --shadow-color: var(--bg-blue);
+}
+
+.alliance-Riding {
+  --bg-color: var(--bg-darkblue);
+  --border-color: var(--bg-darkblue);
+  --shadow-color: var(--bg-darkblue);
+}
+
+.alliance-none {
+  --bg-color: var(--bg-none);
+  --border-color: var(--bg-none);
+  --shadow-color: var(--bg-none);
 }

@@ -60,20 +60,20 @@ const ReportIssues = () => {
   };
 
   return (
-    <div className="report-issue-container">
-      <div className="form-container">
-        <div className="map-container">
+    <div className={styles.report-issue-container}>
+      <div className={styles.form-container}>
+        <div className={styles.map-container}>
           <MapComponent onLocationSelect={handleLocationSelect} />
         </div>
     
-          <form onSubmit={handleSubmit} className="report-issue-form">
-            <div className="form-row">
-              <div className="category-group">
-                <label htmlFor="category" className="form-label">Category:</label>
-                <div className="dropdown-container">
+          <form onSubmit={handleSubmit} className={styles.report-issue-form}>
+            <div className={styles.form-row}>
+              <div className={styles.category-group}>
+                <label htmlFor="category" className={styles.form-label}>Category:</label>
+                <div className={styles.dropdown-container}>
                   <select
                     id="category"
-                    className="form-control"
+                    className={styles.form-control}
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                     required
@@ -85,15 +85,15 @@ const ReportIssues = () => {
                     <option value="Misinformation">Misinformation</option>
                     <option value="Polling-Station-Problem">Polling Station Problems</option>
                   </select>
-                  <span className="dropdown-icon">▼</span>
+                  <span className={styles.dropdown-icon}>▼</span>
                 </div>
               </div>
 
-              <div className="description-group">
-                <label htmlFor="description" className="form-label">Description:</label>
+              <div className={styles.description-group}>
+                <label htmlFor="description" className={styles.form-label}>Description:</label>
                 <textarea
                   id="description"
-                  className="form-control"
+                  className={styles.form-control}
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   required
@@ -102,7 +102,7 @@ const ReportIssues = () => {
               </div>
             </div>
 
-            <button type="submit" className="submit-button">
+            <button type="submit" className={styles.submit-button}>
               Submit Report
             </button>
           </form>

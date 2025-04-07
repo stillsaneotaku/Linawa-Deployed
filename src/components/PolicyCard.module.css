@@ -1,30 +1,18 @@
-.accordionBody {
+.accordion-body {
   padding: 1.25rem;
   overflow: auto;
 }
 
-.accordionButton {
-  font-weight: bold;
-}
-
-.policyText {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  color: #000000;
-}
-
-.btn {
+.btn{
   display: inline-block;
   margin-top: 1rem;
 }
 
-.summaryTitle {
+.summary-title{
   color: #000;
   font-weight: bold;
 }
-
-.summaryText {
+.summary-text{
   background-color: #cce7ff; /* Light blue background */
   border: 2px solid #4a90e2; /* Blue border */
   padding: 10px;

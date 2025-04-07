@@ -1,109 +1,124 @@
-.pageTitle {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .pageContainer {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .candidateProfilePage {
-    color: var(--white);
-    background: rgba(18, 77, 173, 0.8);
-    box-shadow: 0 0px 20px rgba(10, 61, 145, 0.8);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 2px solid rgba(10, 61, 145, 1);
-  
+.candidateProfilePage.card {
+    color: var(--white) !important;
+
+    background: rgba(18, 77, 173, 0.8) !important;
+    box-shadow: 0 0px 20px rgba(10, 61, 145, 0.8) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border: 2px solid rgba(10, 61, 145, 1) !important;
+
     display: grid;
     grid-template-columns: 1fr 1.8fr 1fr;
     grid-template-rows: 120px 200px 260px 50px;
-    grid-template-areas:
+    grid-template-areas: 
       "title title title"
       "info info image"
       "info info stats"
       "back back back";
-  
+
     margin: 2%;
-    padding: 1% 0;
-    width: 60%;
-  }
-  
-  .titleContainer {
+    padding: 1% 0% 1% 0%;
+
+    width: 60% !important;
+}
+
+.titleContainer {
     grid-area: title;
     justify-self: center;
-  }
-  
-  .title {
-    margin: 0;
+}
+
+.title {
+    margin: 0 !important;
     font-weight: bold;
     font-size: 4rem;
-  }
-  
-  .tableInformation {
+}
+
+.list-group {
+}
+
+.tableInformation {
     grid-area: info;
     width: 94%;
     justify-self: flex-end;
     align-self: flex-start;
-  }
-  
-  .tableTitle {
+}
+
+.tableTitle {
     font-weight: bold;
     font-size: 1.5rem;
-  }
-  
-  .firstCol {
+}
+
+.firstCol {
     text-align: end;
     font-weight: bold;
     border: 1px double black;
-  }
-  
-  .secondCol {
+}
+
+.secondCol {
     border: 1px double black;
-  }
-  
-  .candidateImageFormat {
+}
+
+.list-group-item {
+    color: var(--black) !important;
+}
+
+.candidateImageFormat {
     grid-area: image;
     align-self: flex-start;
-    width: 166px;
-    height: 166px;
+
+    width: 166px !important;
+    height: 166px !important;
     justify-self: center;
     object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 2px solid rgba(255, 255, 255, 1);
-  }
-  
-  .cardFooter {
-    grid-area: back;
-  }
-  
-  .returnLink {
+    border-radius: 16px !important;
+
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 1) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border: 2px solid rgba(255, 255, 255, 1) !important;
+}
+
+.badge {
+    margin: 0 2% 0 0;
+}
+
+.candidateDetails {
+    width: 100%;
+}
+
+.card-footer {
+    grid-area: back !important;
+}
+
+.btn.btn-primary {
+    margin: 0;
+    width: 100%;
+}
+
+.returnLink {
     grid-area: stats;
     background-color: var(--blue);
     color: var(--white);
+    
     border-radius: 10px;
+    
     height: 10%;
     display: flex;
     align-items: center;
+
     margin: 4% 0 6% 0;
-    padding: 0.5% 1.5%;
+    padding: 0.5% 1.5% 0.5% 1.5%;
+
     text-decoration: none;
     font-weight: bold;
-  }
-  
-  .returnLink:hover {
+}
+
+.returnLink:hover {
     background-color: rgb(1, 42, 107);
     color: var(--white);
-  }
-  
-  .returnLink:active {
+}
+
+.returnLink:active {
     background-color: rgb(25, 79, 166);
     color: var(--white);
-  }
-  
+}
