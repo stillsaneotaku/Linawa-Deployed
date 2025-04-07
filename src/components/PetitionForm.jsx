@@ -100,6 +100,7 @@ const PetitionForm = () => {
 
       {activeTab === "report" && (
         <div className={styles.reportSection}>
+          <p>Report tab is active</p>
           <ReportIssues />
         </div>
       )}
