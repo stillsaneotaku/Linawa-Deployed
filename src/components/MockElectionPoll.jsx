@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../firebase"; 
-import { collection, getDoc, doc, updateDoc, increment, setDoc, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
+import {
+  collection,
+  getDoc,
+  doc,
+  updateDoc,
+  increment,
+  setDoc,
+  getDocs,
+} from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { FaCheckCircle } from "react-icons/fa"; 
-import "./MockElection.module.css";
+import { FaCheckCircle } from "react-icons/fa";
+import styles from "./MockElection.module.css"; // ✅ Fixed import
 
 const CandidatesPolling = () => {
   const [candidates, setCandidates] = useState([]);
@@ -14,21 +22,20 @@ const CandidatesPolling = () => {
   const fetchCandidates = async () => {
     const candidatesCollection = collection(db, "candidates");
     const candidatesSnapshot = await getDocs(candidatesCollection);
-    const candidatesList = candidatesSnapshot.docs.map(doc => ({
+    const candidatesList = candidatesSnapshot.docs.map((doc) => ({
       id: doc.id,
-      ...doc.data()
+      ...doc.data(),
     }));
     setCandidates(candidatesList);
     setLoading(false);
   };
-
 
   const fetchUser = () => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        fetchUserVotes(user.uid); 
+        fetchUserVotes(user.uid);
       } else {
         setUser(null);
       }
@@ -45,37 +52,28 @@ const CandidatesPolling = () => {
     }
   };
 
-
   const handleVote = async (candidateId) => {
     try {
       if (userVotes.length < 12 && !userVotes.includes(candidateId)) {
         const updatedVotes = [...userVotes, candidateId];
-  
-
-        const voteDocRef = doc(db, "votes", user.uid); // Document reference for user's vote
-  
-
+        const voteDocRef = doc(db, "votes", user.uid);
         const voteDocSnap = await getDoc(voteDocRef);
-  
+
         if (voteDocSnap.exists()) {
-          // If the document exists, update the selectedCandidates field
           await updateDoc(voteDocRef, {
-            selectedCandidates: updatedVotes
+            selectedCandidates: updatedVotes,
           });
         } else {
-          // If the document doesn't exist, create it with the selected candidates
           await setDoc(voteDocRef, {
-            selectedCandidates: updatedVotes
+            selectedCandidates: updatedVotes,
           });
         }
-  
-        // Update the candidate's vote count in Firestore
-        const candidateDocRef = doc(db, "candidates", candidateId); // Reference to a specific candidate
+
+        const candidateDocRef = doc(db, "candidates", candidateId);
         await updateDoc(candidateDocRef, {
-          voteCount: increment(1)
+          voteCount: increment(1),
         });
-  
-        // Update the local state with the new votes
+
         setUserVotes(updatedVotes);
       } else {
         alert("You can vote for up to 12 candidates only.");
@@ -87,34 +85,34 @@ const CandidatesPolling = () => {
 
   useEffect(() => {
     fetchCandidates();
-    fetchUser(); // Check the current user's state
+    fetchUser();
   }, [user]);
 
   return (
-    <div className="mock-election-container">
-      <h1 className="page-title">Senatorial Candidates</h1>
+    <div className={styles.mockElectionContainer}>
+      <h1 className={styles.pageTitle}>Senatorial Candidates</h1>
       {loading ? (
         <p>Loading candidates...</p>
       ) : (
-        <div className="candidates-list">
+        <div className={styles.candidatesList}>
           {candidates.map((candidate) => (
-            <div key={candidate.id} className="candidate-card">
-              <div className="candidate-info">
-                <div className="check-icon">
+            <div key={candidate.id} className={styles.candidateCard}>
+              <div className={styles.candidateInfo}>
+                <div className={styles.checkIcon}>
                   {userVotes.includes(candidate.id) && <FaCheckCircle />}
                 </div>
                 <h2>{candidate.name}</h2>
               </div>
-              <div className="vote-section">
+              <div className={styles.voteSection}>
                 {userVotes.includes(candidate.id) ? (
                   <p>Votes: {candidate.voteCount}</p>
                 ) : (
                   <button
                     onClick={() => handleVote(candidate.id)}
-                    className={`vote-btn ${userVotes.includes(candidate.id) ? 'voted' : ''}`}
+                    className={styles.voteBtn}
                     disabled={userVotes.includes(candidate.id)}
                   >
-                    {userVotes.includes(candidate.id) ? "Voted" : "Vote"}
+                    Vote
                   </button>
                 )}
               </div>
