@@ -33,9 +33,6 @@
     font-size: 4rem;
 }
 
-.list-group {
-}
-
 .tableInformation {
     grid-area: info;
     width: 94%;
