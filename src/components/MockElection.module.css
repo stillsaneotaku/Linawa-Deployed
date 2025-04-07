@@ -1,0 +1,86 @@
+:global(.mock-election-container) {
+    font-family: 'Arial', sans-serif;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2% auto;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  :global(.page-title){
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  :global(.candidates-list) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  :global(.candidate-card) {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  :global(.candidate-info) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  :global(.check-icon) {
+    color: #dd0a0a;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  :global(.candidate-card h2 ){
+    font-size: 20px;
+    color: #34495e;
+  }
+  
+  :global(.vote-section) {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    
+  }
+  
+  :global(.vote-btn) {
+    background-color: #dd0a0a;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  :global(.vote-section p){
+    background-color: #ffc72c;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+  }
+  :global(.vote-btn:hover) {
+    background-color: #dd0a0a;
+  }
+  
+  :global(.vote-btn:disabled) {
+    background-color: #ffc72c;
+    cursor: not-allowed;
+  }
+  

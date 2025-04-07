@@ -1,0 +1,57 @@
+:root {
+  /* PALETTE */
+  --blue: rgb(10, 61, 145);
+  --red: rgb(200, 16, 46);
+  --yellow: rgb(255, 199, 44);
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+
+  /* PARTY */
+  --bg-red: rgb(200, 16, 46);
+  --bg-yellow: rgb(255, 199, 44);
+  --bg-green: rgb(0, 128, 0);
+  --bg-blue: rgb(10, 61, 145);
+  --bg-darkblue: rgb(0, 25, 60);
+  --bg-purple: rgb(102, 51, 153);
+  --bg-black: rgb(0, 0, 0);
+  --bg-none: rgb(35, 35, 35);
+
+  /* ALLIANCE */
+  --alliance-lightgray: rgb(211, 211, 211);
+  --alliance-lightcyan: rgb(153, 255, 255);
+}
+
+body {
+  background-image: url("/background-page.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.pageTitle {
+  color: var(--white);
+  font-size: 4.5rem;
+  background-color: var(--yellow);
+  border-bottom: 4px groove RGBA(254, 209, 65, 0.6);
+  text-shadow: 3px 3px 0px rgba(212, 170, 35, 0.8);
+
+  font-weight: bolder;
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  margin: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+strong {
+  color: var(--white) !important;
+}
+

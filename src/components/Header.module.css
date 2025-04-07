@@ -1,0 +1,44 @@
+.divNavigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: var(--blue);
+    padding: 0 2% 0 2%;
+}
+
+.logo {
+    height: 80px;
+    margin: 0;
+}
+
+.navLinks {
+    display: flex;
+    justify-content: flex-end;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 30%;
+    padding: 2% 1%;
+}
+
+.navLink {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin: auto 4%;
+    white-space: nowrap;
+}
+
+.navLink:link {
+    color: var(--white);
+}
+
+.navLink:hover {
+    background-color: var(--red); 
+    border-radius: 4px; 
+}
+
+.activeLink {
+    color: var(--yellow) !important; 
+    font-weight: bold;
+    border-bottom: 3px solid yellow; 
+}
