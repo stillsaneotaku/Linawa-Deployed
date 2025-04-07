@@ -1,12 +1,12 @@
-import React from 'react'
-import styles from './PolicyCard.module.css'
+import React from 'react';
+import styles from './PolicyCard.module.css';
 
-const PolicyCard = ({policy, onSummarize, summary, loading}) =>{
-    return(
-        <div className="accordion-item">
+const PolicyCard = ({ policy, onSummarize, summary, loading }) => {
+  return (
+    <div className="accordion-item">
       <h2 className="accordion-header">
         <button
-          className="accordion-button collapsed"
+          className={`accordion-button collapsed ${styles.accordionButton}`}
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={`#collapse-${policy.key}`}
@@ -24,7 +24,7 @@ const PolicyCard = ({policy, onSummarize, summary, loading}) =>{
         <div className="accordion-body">
           {/* Split long text into multiple paragraphs */}
           {policy.text.split('\n\n').map((para, index) => (
-            <p key={index} className="policy-text">{para}</p>
+            <p key={index} className={styles.policyText}>{para}</p>
           ))}
 
           {policy.showSummarize && (
@@ -37,14 +37,16 @@ const PolicyCard = ({policy, onSummarize, summary, loading}) =>{
                 </button>
               )}
               {summary && (
-                <p className="summary-text"><span className='summary-title'>Summary:</span> {summary}</p>
+                <p className={styles.summaryText}>
+                  <span className={styles.summaryTitle}>Summary:</span> {summary}
+                </p>
               )}
             </>
           )}
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default PolicyCard;

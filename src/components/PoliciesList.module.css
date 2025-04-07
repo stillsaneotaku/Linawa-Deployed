@@ -1,4 +1,4 @@
-:global(.accordion) {
+.accordion {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,17 +10,36 @@
   --bs-accordion-bg: rgba(255, 255, 255, 0.69) !important;
 }
 
-:global(.accordion-button) {
+.accordionButton {
   font-weight: bold !important;
   color: var(--white) !important;
 }
 
-:global(.accordion-button.collapsed) {
+.accordionButtonCollapsed {
   color: var(--bg-darkblue) !important;
 }
-:global(.policy-text){
+
+.policyText {
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 1rem;
   color: #000000;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.summaryTitle {
+  color: #000;
+  font-weight: bold;
+}
+
+.summaryText {
+  background-color: #cce7ff; /* Light blue background */
+  border: 2px solid #4a90e2; /* Blue border */
+  padding: 10px;
+  margin: 14px;
+  border-radius: 14px;
 }

@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { FaCheckCircle } from "react-icons/fa";
-import styles from "./MockElection.module.css"; // ✅ Fixed import
+import styles from "./MockElection.module.css"; 
 
 const CandidatesPolling = () => {
   const [candidates, setCandidates] = useState([]);

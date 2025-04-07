@@ -15,7 +15,7 @@ const PetitionForm = () => {
     if (user) {
       setUserEmail(user.email);
     } else {
-      console.log("No user is logged in");
+      console.warn("No user is logged in");
     }
   }, []);
 
@@ -27,88 +27,79 @@ const PetitionForm = () => {
       return;
     }
 
-    const petitionData = {
-      petitionTitle,
-      petitionMessage,
-      userEmail,
-      createdAt: new Date(),
-    };
-
     try {
-      const petitionRef = collection(db, 'petitions');
-      await addDoc(petitionRef, petitionData);
+      await addDoc(collection(db, 'petitions'), {
+        petitionTitle,
+        petitionMessage,
+        userEmail,
+        createdAt: new Date(),
+      });
 
       alert('Petition submitted successfully!');
-      setPetitionMessage('');
       setPetitionTitle('');
+      setPetitionMessage('');
     } catch (err) {
-      console.error('Error submitting petition: ', err);
+      console.error('Error submitting petition:', err);
       alert("Failed to submit petition!");
     }
   };
 
   return (
-    <div className="formContainer">
-      <div className="section-title-div">
-        <h1 className="section-title">Petition and Report Issue</h1>
-        <p className="section-description">
-          One feature of this platform is to encourage citizens to take part in democracy by signing petitions or reporting misconduct
-          during the Philippine Elections.
+    <div className={styles.formContainer}>
+      <div className={styles.sectionTitle}>
+        <h1>Petition and Report Issue</h1>
+        <p>
+          Participate in democracy by signing petitions or reporting misconduct during the Philippine Elections.
         </p>
       </div>
 
-      
-
-      {/* Tab toggle buttons */}
-      <div className="tab-toggle">
+      <div className={styles.tabToggle}>
         <button
-          className={`tab-button ${activeTab === "petition" ? "active" : ""}`}
+          className={`${styles.tabButton} ${activeTab === "petition" ? styles.active : ""}`}
           onClick={() => setActiveTab("petition")}
         >
           Petition
         </button>
         <button
-          className={`tab-button ${activeTab === "report" ? "active" : ""}`}
+          className={`${styles.tabButton} ${activeTab === "report" ? styles.active : ""}`}
           onClick={() => setActiveTab("report")}
         >
           Report Issue
         </button>
       </div>
 
-      {/* Info Section */}
       <InfoSection selectedOption={activeTab === "petition" ? "File a Petition" : "Submit Report"} />
 
-      {/* PETITION FORM */}
       {activeTab === "petition" && (
         <form onSubmit={handleSubmitPetition}>
-          <div className="inputPetitionTitle">
-            <label htmlFor="petitionTitle" className="form-label">Petition Title:</label>
+          <div className={styles.inputGroup}>
+            <label htmlFor="petitionTitle">Petition Title</label>
             <input
+              id="petitionTitle"
               type="text"
-              className="form-control"
-              placeholder="Enter petition title"
               value={petitionTitle}
               onChange={(e) => setPetitionTitle(e.target.value)}
-              id="petitionTitle"
+              placeholder="Enter petition title"
             />
           </div>
-          <div className="inputMessage">
-            <label htmlFor="petitionMessage" className="form-label">Message:</label>
+
+          <div className={styles.inputGroup}>
+            <label htmlFor="petitionMessage">Message</label>
             <textarea
-              className="form-control"
               id="petitionMessage"
-              rows="10"
+              rows="8"
               value={petitionMessage}
               onChange={(e) => setPetitionMessage(e.target.value)}
-            ></textarea>
-            <button type="submit" className="btn btn-primary">Submit</button>
+              placeholder="Write your message here..."
+            />
           </div>
+
+          <button type="submit" className={styles.submitButton}>Submit Petition</button>
         </form>
       )}
 
-      {/* REPORT FORM */}
       {activeTab === "report" && (
-        <div className="reportSection">
+        <div className={styles.reportSection}>
           <ReportIssues />
         </div>
       )}
