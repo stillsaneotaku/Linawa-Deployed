@@ -41,6 +41,7 @@
     border-top-right-radius: 12px;
     font-weight: bold;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
     color: rgba(0, 0, 0, 0.6);
     transition: background-color 0.3s ease, color 0.3s ease;
   }

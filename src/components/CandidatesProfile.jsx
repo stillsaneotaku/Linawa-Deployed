@@ -62,11 +62,11 @@ const CandidatesProfile = () => {
 
   return (
     <>
-      <nav className="navbar bg-body-tertiary">
-        <div className="searchArea">
-          <form className="d-flex" role="search">
+      <nav className={styles.navbar}>
+        <div className={styles.searchArea}>
+          <form className={styles.dFlex} role="search">
             <input
-              className="form-control me-2"
+              className={styles.formControl}
               type="search"
               placeholder="search candidate..."
               aria-label="Search"
@@ -75,9 +75,9 @@ const CandidatesProfile = () => {
             />
           </form>
 
-          <div class="filterText">Sort by:</div>
+          <div className={styles.filterText}>Sort by:</div>
           <select
-            className="form-select"
+            className={styles.formSelect}
             aria-label="Sort candidates"
             value={sortOption}
             onChange={(e) => setSortOption(e.target.value)}
@@ -87,9 +87,9 @@ const CandidatesProfile = () => {
             <option value="Alliance">Alliance</option>
           </select>
 
-          <div className="filterText">Party:</div>
+          <div className={styles.filterText}>Party:</div>
           <select
-            className="form-select"
+            className={styles.formSelect}
             aria-label="Filter by party"
             value={selectedParty}
             onChange={(e) => setSelectedParty(e.target.value)}
@@ -101,9 +101,9 @@ const CandidatesProfile = () => {
             ))}
           </select>
 
-          <div className="filterText">Alliance:</div>
+          <div className={styles.filterText}>Alliance:</div>
           <select
-            className="form-select"
+            className={styles.formSelect}
             aria-label="Filter by alliance"
             value={selectedAlliance}
             onChange={(e) => setSelectedAlliance(e.target.value)}
@@ -117,7 +117,7 @@ const CandidatesProfile = () => {
         </div>
       </nav>
 
-      <div className="cardContainer">
+      <div className={styles.cardContainer}>
         <div className="row">
           {sortedCandidates.length > 0 ? (
             sortedCandidates.map((candidate, index) => (
@@ -126,40 +126,27 @@ const CandidatesProfile = () => {
                   to={`/pages/candidate-profiles/${encodeURIComponent(
                     candidate.name
                   )}`}
-                  className="cardLink"
+                  className={styles.cardLink}
                 >
-                  <div className={`card ${partyColors[candidate.party] ?? ""}`}>
+                  <div className={`${styles.card} ${styles[partyColors[candidate.party]]  ?? ""}`}>
                     <img
                       src={candidate.image}
-                      className="card-img-bottom"
+                      className={styles.cardImgBottom}
                       alt={candidate.name}
                     />
-                    <div className="card-body">
-                      <h5 className="card-title">{candidate.name}</h5>
+                    <div className={styles.cardBody}>
+                      <h5 className={styles.cardTitle}>{candidate.name}</h5>
                     </div>
                     <ul className="list-group list-group-flush">
                       <li
-                        className={`list-group-item-top party-${
-                          partyColors[candidate.party]
-                            ? candidate.party.replace(/\s+/g, "-")
-                            : "none"
-                        }`}
-                      >
-                        <span className="badge rounded-pill">
+                        className={styles.listGroupItemTop}>
+                        <span className={styles.roundedPill}>
                           {candidate.party}
                         </span>
                       </li>
                       <li
-                        className={`list-group-item-bot alliance-${
-                          allianceColors[candidate.alliance]
-                            ? allianceColors[candidate.alliance].replace(
-                                /\s+/g,
-                                "-"
-                              )
-                            : "none"
-                        }`}
-                      >
-                        <span className="badge rounded-pill">
+                        className={styles.listGroupItemBot}>
+                        <span className={styles.roundedPill}>
                           {candidate.alliance}
                         </span>
                       </li>

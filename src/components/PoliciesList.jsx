@@ -103,7 +103,7 @@ const PoliciesList = () => {
     ];
 
     return (
-        <div className="accordion" id="accordionExample">
+        <div className={styles.accordion}>
       {policies.map(policy => (
         <PolicyCard
           key={policy.key}
