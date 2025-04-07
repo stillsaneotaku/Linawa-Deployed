@@ -118,8 +118,13 @@
 .card-img-bottom {
   width: 166px !important;
   height: 166px !important;
+<<<<<<< HEAD
   margin: 20px;
   object-fit: cover; /* Crop image without stretching */
+=======
+  margin: 10px;
+  object-fit: cover;
+>>>>>>> e01509a (turog ta)
   border-radius: 16px !important;
   border: 2px groove rgba(10, 61, 145, 1) !important;
 }
