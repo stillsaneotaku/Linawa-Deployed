@@ -1,0 +1,94 @@
+/* Report Issue Styling */
+:global(.report-issue-container ){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: -10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+:global(.form-container) {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+:global(.map-container)   {
+    flex: 1;
+    margin: 10px;
+  }
+  :global(.report-issue-form){
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+  }
+
+  
+  :global(.category-group, .description-group){
+    flex: 1;
+    margin-bottom: 20px;
+  }
+  
+  :global(.form-label )  {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  :global(.form-control)   {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 100%;
+  }
+  :global(#category){
+    border: 1px solid #111;
+  }
+  :global(.form-control:focus)   {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  :global(textarea.form-control)   {
+    resize: none;
+  }
+  
+  :global(.dropdown-container) {
+    position: relative;
+  }
+  
+  :global(.dropdown-icon ){
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #aaa;
+  }
+  
+  :global(.submit-button) {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+  
+  :global(.submit-button:hover)   {
+    background-color: #0056b3;
+  }
+  
+  :global(.submit-button:focus)   {
+    outline: none;
+  }
+  

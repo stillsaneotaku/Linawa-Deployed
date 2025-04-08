@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "voteph-democratech",
+  "private_key_id": "27d9b0cda3d2585da9df71d997dd5b9829d0ab08",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC2g2/4MyyJ52Ut\n+lh06P9xEBKUfon80rkJGNRJCbtkABrX3ySgvKeFoGnXYj1lsDeTJQgs2sm7akj1\nRFmVKzarTtEB+c9q8LuI300wR4xIQDJ9CoUpxhmghwmuImWyqX+j8a1PcgP6cPbF\nPqmUz7iQLZ7M+bcw1Ea4JXmfbQZCdrcfRF6DTYuFF5604DbKz2YwpAY726EXIHL1\nlbg6yLsLLwDTVubMvEfARgT/toL7bT+kArYRoatPk1wSdYF4R/2Rw86tD2mKIPEH\n6dQ2pV8r/ltKqEP9kw/sD5a4XSj8BrC3jCSY0n7XY861wniTerj/70x/b4bzswEo\n6RnXaPd9AgMBAAECggEAECTeMaEtLmGWdJOxYV3+wlx+mD39LKzjCyf0FyXSOo07\n0p59We52Dv7afd/FuIn20IA1Eeqkb3x+SZurJOO2qT6GhFs5eqcin3/JDx01DmsH\nTEIy9zf7qlRnicynHD+b97936hAWw/9cBKR/UZdyJuayJkVsa9hLDRzbfjuhkx1Q\nvRzsb3TbDOAyllcl4tYJbttniaZJd3L06LrzJuftZ5cgjqo745EzFaoCPeM755VX\nlmcEygd5HJv1+2o3woCBoohhn6Y6XgEApPJjKn+Ahpu7keoQd3MRgoBfz5/Z6tut\nn74Csp84t7lGnSK3gUElPt5DiUb0R7AuYZgyrIB5bQKBgQDszrPGbsZ7Lqc4iCp0\nJVzOaB1c2jJt+XK1lg6PSkF8B+5DKO1GKmSyyq+DDs8PLpsatflDx3O6IVAFHjU/\n0yFgVELLdT7fALOdi7vJXDlN/hF/335lEYSO9Jog89vDfyVk3OiFZw6/wMug/QVT\nMY0HW/t+xgnJOHosfQZX+O5MwwKBgQDFTj09DE0DoZb5pdrNHPM4qmphnis/fhtr\nVhVzfUPjIqwAOaKdVLQdM4qWnOOp57QyGdydY3jVIo6m3lajYqIJm+tBqPYIbc9s\nN6QUQ7dQ5gUjPVdAUW0ZE0kFPvpqzMjl9OMEbVdRFhCXEjGoc/Ymk9r3py54rf9f\n4EdumFhmvwKBgQDkO6RRD9sERkas2a/xGUGFPhturm4ESHMiSGnn+K18mTguSnfF\nNH6xQ2A9dDxkaYrcB58ikE0di5XQGPlBdn+olA18gpgB3m8+3Lo0rEoevUyobgMn\n7eZQ0bbrI50fop+rwq3oRReWAH9Bvhsvv4YpHaIa4Uv1QBWgYy+GAknKeQKBgFik\nHMkHdLYT66L+yzzpK7Aih6aRi7Z7rk/bncmD1nL9ya5UNmVef4i69iFSHMnhSchU\nbBPdc5S1cMcxDlVa45dTkC6wfNAunUht+u4LuhjDLj21ujQwIMZqLp0HvTMsC3mc\nOj1r7hWExzFHwD2A025jcLVgS3V2Hkvxk8Xw9Y47AoGAOwEeD9eOIrtk1XhX147c\noG/6IGKZ/6JppFfEEsUjclsY6XjJ/P3w8IrzbiH0zFgkapHSoioFoiIhA8MqCtKP\nTnlUuk/4yUnkSsC4u+Z1O+sb2WiNsZt1ke0Tr0qyvsBEqUcnKF5TCLNwM655yNSp\nmE4tNQdEZCWj9JvBGVeIf+E=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@voteph-democratech.iam.gserviceaccount.com",
+  "client_id": "115971108183417609322",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40voteph-democratech.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
