@@ -8,7 +8,7 @@ const News = () => {
 
   useEffect(() => {
     const getArticles = async () => {
-      const response = await fetch("http://localhost:5555/api/news");
+      const response = await fetch("https://linawa-deployed-backend.onrender.com/api/news");
       const data = await response.json();
       console.log(data);
       setArticles(data);
